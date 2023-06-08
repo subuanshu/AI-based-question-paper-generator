@@ -1,0 +1,102 @@
+{"question": [
+    {"tag":"Remembering",
+         "patterns":["define", "find", "how", "label", "match", "name", "omit", "recall","spell", 
+         "tell", "what", "when", "where", "which", "who", "why"],
+         "responses":["1"],
+         "context_set": ""
+
+        },
+        {"tag": "understanding",
+         "patterns":["demonstrate", "extend", "illustrate", "infer", 
+         "outline", "relate", "rephrase", "show", "summarize", "translate","explain","translate","interpret","explain","contrast","compare","classify"," whether it is true or false"],
+         "responses":["2"],
+         "context_set": ""
+        },
+        
+        {"tag": "Applying",
+         "patterns": ["apply","experiment", "with", "identify", "interview","build","choose","construct","develop","plan" ,"select","solve","utilize",
+         "make use of model", "organize","utilize"],
+         "responses":["3"],
+         "context_set": ""
+        },
+       
+        {"tag": "ANALYZING",
+        "patterns":["analyze",
+        "assume",
+        "categorize",
+        "classify",
+        "compare",
+        "conclusion",
+        "contrast",
+        "discover",
+        "dissect",
+        "distinguish",
+        "divide",
+        "examine",
+        "function",
+        "inference",
+        "inspect",
+        "list",
+        "motive",
+        "relationships",
+        "simplify",
+        "survey",
+        "take part in",
+        "test for",
+        "theme"],
+        "responses":["4"],
+        "context_set": ""
+        },
+        {"tag": "EVALUATING",
+         "patterns":[
+          "agree",
+          "appraise",
+          "assess",
+          "award",
+          "choose",
+          "compare",
+          "conclude",
+          "criteria",
+          "criticize",
+          "decide",
+          "deduct",
+          "defend",
+          "determine",
+          "disprove",
+          "dispute",
+          "estimate",
+          "evaluate",
+          "explain",
+          "importance",
+          "influence",
+          "interpret",
+          "judge",
+          "justify",
+          "measure",
+          "opinion",
+          "perceive",
+          "prioritize",
+          "prove",
+          "rate",
+          "recommend",
+          "select",
+          "support",
+          "value"],
+         "responses":["5"],
+         "context_set": ""
+        },
+        {"tag": "CREATING",
+         "patterns": ["adapt", "build", "change", "choose", "combine", "compile", "compose", "construct", "create", "delete", 
+         "design", "develop",  "discuss", "elaborate", "estimate", "formulate", "happen", "imagine", "improve", "invent", "make up", "maximize", 
+         "minimize", "modify", "original", "originate", "plan", "predict", "propose", "solution", "solve", "suppose", "test", "theory"],
+         "responses":["6"],
+         "context_set": ""
+         }
+        
+        
+        
+        
+        
+
+   ]
+}

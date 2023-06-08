@@ -1,0 +1,74 @@
+{% extends 'layout1.html' %}
+
+{% block body %}
+
+
+
+
+    <h1 style="color:rgb(160, 160, 160);font-family: 'Times New Roman', Times, serif;text-align: center;" class="mt-2">Welcome {{username}}</h1>
+ 
+
+<h2 class="container-fluid " style="font-family: 'Times New Roman', Times, serif;color: rgb(165, 163, 163);" >Add Subject/Choose Subject</h2>
+<div class="row">
+    <div class="col-6 mt-4" >
+    <form action="{{url_for('dash')}}" method="POST">
+        <label for="subject" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 60px;">
+            Enter the subject name to Add !
+
+        </label>
+       
+        <br />
+        <input type="text" name="subject" value="" id="subject" required style="margin-left: 60px;border: 2px solid grey;width:60%" required>
+        <br />
+        <span class="success">{{ms}}</span>
+      
+        <br />
+  
+       
+        <button class="btn btn-info mt-2 mb-3  ml-5 py-2 px-3 "type="submit" style="margin-left:30% ; font-weight:bold;font-family: 'Times New Roman', Times, serif;"><i class="fa fa-plus" aria-hidden="true"></i>Add</button>
+    </form>
+</div>
+<div class="col-1">
+    <div class="vl" style="border-left: 1px solid rgb(146, 144, 144);height: 500px;"></div>
+</div>
+<div class="col-5">
+    <h3 style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 40px;">Add to the Existing Question Paper</h3>
+    <span class="error">{{msg}}</span>
+    <form action="{{url_for('dash1')}}" method="POST">
+        {% for e in li %}
+        <input type="radio" id={{e}} name="subject"value={{e}} style="margin-left: 50px;" required>
+        <label for="child" style="font-size: 21px;font-family: 'Times New Roman', Times, serif;color: black;">     {{e}}</label>
+        <br />
+    {% endfor %}
+    <button class="btn btn-warning mt-4 mb-3  ml-5 py-2 px-3 " type="submit" style="margin-left:20% ; font-weight:bold;font-family: 'Times New Roman', Times, serif;">Add To Existing</button>
+    </form>
+  
+
+</div>
+
+
+
+
+
+
+
+
+   
+</script>
+   
+<script>
+      
+        var a='{{sub}}';
+        var b='{{log}}';
+        console.log("hello"+a);
+        a=parseInt(a);
+        b=parseInt(b);
+       
+     
+        
+        </script>
+
+
+
+
+{% endblock %}

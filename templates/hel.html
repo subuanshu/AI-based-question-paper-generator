@@ -1,0 +1,175 @@
+<html>
+	<head>
+<style>
+
+
+</style>
+	</head>
+	<body>
+
+    
+            <form  action="{{ url_for('quest2') }}" method="POST">
+        
+				<div class=" slider-ui">
+              <input type="range" min="0" max="100" step="1" value="" name="1" onchange="call()" id="a1"/>
+              <div class="bar">
+                <span class="min"></span>
+                <span class="max" id="max"></span>
+              </div>
+			  <div class="track">
+				<div class="value"></div>
+			 </div>
+			
+			 </div>
+			<div class="slider-ui">
+          
+			 <input type="range" min="0" max="100" step="1" value="" name="2" id="a2" onchange="call1()"/>
+			 <div class="bar">
+			   <span class="min"></span>
+			   <span class="max" id="max1"></span>
+			 </div>
+			 <div class="track">
+			   <div class="value"></div>
+			</div>
+			</div>
+         
+			  <div class="slider-ui color2">
+              <input type="range" min="0" max="100" step="1" value="" name="3" id="a3" onchange="call2()">
+              <div class="bar">
+                <span class="min">0</span>
+                <span class="max" id="max2"></span>
+              </div>
+              <div class="track">
+                <div class="value"></div>
+              </div>
+           
+
+            <div class="slider-ui color1">
+              
+                <input type="range" min="0" max="100" step="1" value="" name="4" id="a4" onchange="call3()">
+                <div class="bar">
+                  <span class="min"></span>
+                  <span class="max" id="max3"></span>
+                </div>
+                <div class="track">
+                  <div class="value"></div>
+                </div>
+              </div>
+
+            
+              <div class="slider-ui color2">
+            
+                <input type="range" min="0" max="100" step="1" value="" name="5" id="a5" onchange="call4()">
+                <div class="bar">
+                  <span class="min"></span>
+                  <span class="max" id="max4"></span>
+                </div>
+                <div class="track">
+                  <div class="value"></div>
+                </div>
+              </div>
+
+			  <div class="slider-ui color2">
+                <input type="range" min="0" max="100" step="1" value="" name="6" id="a6" onchange="call5()">
+                <div class="bar">
+                  <span class="min"></span>
+                  <span class="max" id="max5"></span>
+                </div>
+                <div class="track">
+                  <div class="value"></div>
+                </div>
+              </div>
+  
+              <button type="submit">Go</button>
+          
+        
+          </form>
+          </div>
+		  
+	</body>
+          <script>
+            const sliders = document.querySelectorAll(".slider-ui");
+          
+          sliders.forEach(slider => {
+              let input = slider.querySelector("input[type=range]");
+              let min = input.getAttribute("min");
+              let max = input.getAttribute("max");
+              let valueElem = slider.querySelector(".value");
+          
+              slider.querySelector(".min").innerText = min;
+              slider.querySelector(".max").innerText = max;
+          
+              function setValueElem() {
+                  valueElem.innerText = input.value;
+                  let percent = (input.value - min) / (max - min) * 100;
+                  valueElem.style.left = percent ;
+              }
+              setValueElem();
+          
+              input.addEventListener("input", setValueElem);
+              input.addEventListener("mousedown", () => {
+                  valueElem.classList.add("up");
+              });
+              input.addEventListener("mouseup", () => {
+                  valueElem.classList.remove("up");
+              });
+
+             
+             
+          });
+		  function call() {
+
+
+  let  y=document.getElementById("a2").max=(100-x);
+  let  y1=document.getElementById("a3").max=(100-x);
+  let  y2=document.getElementById("a4").max=(100-x);
+  let  y3=document.getElementById("a5").max=(100-x);
+  let  y4=document.getElementById("a6").max=(100-x);
+
+  document.getElementById("max1").innerHTML = y;
+  document.getElementById("max2").innerHTML = y1;
+  document.getElementById("max3").innerHTML = y2;
+  document.getElementById("max4").innerHTML = y3;
+  document.getElementById("max5").innerHTML = y4;
+
+		  }
+		  function call1() {
+let x = document.getElementById("a2").max;
+let xx = document.getElementById("a2").value;
+
+  let  y=document.getElementById("a3").max=(x-xx);
+  document.getElementById("max2").innerHTML = y;
+  let  y2=document.getElementById("a4").max=(x-xx);
+  let  y3=document.getElementById("a5").max=(x-xx);
+  let  y4=document.getElementById("a6").max=(x-xx);
+  document.getElementById("max3").innerHTML = y2;
+  document.getElementById("max4").innerHTML = y3;
+  document.getElementById("max5").innerHTML = y4;
+  document.getElementById("max").innerHTML = y4;
+
+
+
+
+
+		  }
+		  function call2() {
+			let x = document.getElementById("a3").max;
+let xx = document.getElementById("a3").value;
+
+  let  y=document.getElementById("a2").max=(x-xx);
+  document.getElementById("max1").innerHTML = y;
+  let  y2=document.getElementById("a4").max=(x-xx);
+  let  y3=document.getElementById("a5").max=(x-xx);
+  let  y4=document.getElementById("a6").max=(x-xx);
+  document.getElementById("max3").innerHTML = y2;
+  document.getElementById("max4").innerHTML = y3;
+  document.getElementById("max5").innerHTML = y4;
+  document.getElementById("max").innerHTML = y4;
+
+		  }
+
+          </script>
+     
+   
+
+</html>

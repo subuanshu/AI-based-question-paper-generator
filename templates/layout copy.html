@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>{{ title }}</title>
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}"/>
+    <style>
+		html {
+			font-size: 1rem;
+		}
+
+		@media (min-width: 576px) {
+			html {
+				font-size: 1.25rem;
+			}
+		}
+
+		@media (min-width: 768px) {
+			html {
+				font-size: 1.5rem;
+			}
+		}
+
+		@media (min-width: 992px) {
+			html {
+				font-size: 1.75rem;
+			}
+		}
+
+		@media (min-width: 1200px) {
+			html {
+				font-size: 2rem;
+			}
+
+			html {
+				font-size: 1rem;
+			}
+
+			h1 {
+				font-size: 1.2rem;
+			}
+
+			h2 {
+				font-size: 1.1rem;
+			}
+
+			@media (min-width: 768px) {
+				html {
+					font-size: 1.1rem;
+				}
+
+				h1 {
+					font-size: 1.3rem;
+				}
+
+				h2 {
+					font-size: 1.2rem;
+				}
+			}
+
+			@media (min-width: 991px) {
+				html {
+					font-size: 1.2rem;
+				}
+
+				h1 {
+					font-size: 1.5rem;
+				}
+
+				h2 {
+					font-size: 1.4rem;
+				}
+			}
+
+			@media (min-width: 1200px) {
+				html {
+					font-size: 1.2rem;
+				}
+
+				h1 {
+					font-size: 1.7rem;
+				}
+
+				h2 {
+					font-size: 1.6rem;
+				}
+			}
+
+		}
+	</style>
+    <script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+
+	</script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Thasadith:400,400i,700,700i&amp;subset=latin-ext,thai,vietnamese"
+    rel="stylesheet">
+    
+	<style>
+	.navbar-brand{
+  font-weight: 600;
+  padding-left: 25px;
+  font-size: 25px;
+  color:white;
+  text-decoration: none;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.nav-link{
+color:white;
+margin:0px 20px 0px  ;
+text-decoration: none;
+border-radius: 5px;
+font-weight: bold;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.nav-link:hover{
+  background-color: gold;
+ font-family:'Times New Roman', Times, serif;
+ font-weight: 500;
+ color:white;
+}
+.navbar-brand:hover{
+    color: whitesmoke;
+
+
+}
+	</style>
+    </head>
+
+    <body>
+ 
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg navbar static-top" style="background-color: #130233;">
+                <div class="container">
+                    <a class="navbar-brand" href="{{ url_for('index') }}">
+                     <span class="brand">Exam Authoring Tool</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ url_for('index') }}">Home
+                                   
+                                </a>
+                            </li>
+							<li class="nav-item ">
+                                <a class="nav-link" href="{{ url_for('index') }}">Logout
+                                   
+                                </a>
+                            </li>
+							<li class="nav-item">
+								<p style="color:white;">Subhanshu Kumar</p>
+							</li>
+                          
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        
+            {% block body %} {% endblock %}
+            <footer class="text-center " style="background-color: #130233; height: 105px;" >
+                <div class="container ">
+                    <!-- logo -->
+                    <h2 class="logo2 text-center">
+                        <a href="{{ url_for('dashboard') }}" style="text-decoration: none;color: white;">
+                            Exam Authoring Tool
+                        </a>
+                    </h2>
+               
+                    <div class="contact-left-footer mt-1">
+        
+        
+        
+        
+        
+              
+                    </div>
+                
+                    <p class="homelogo">
+                
+                    <p style="color: whitesmoke;">&copy; Copyright 2022 PES University</p>
+                    
+                </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+    </html>

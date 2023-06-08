@@ -1,0 +1,39 @@
+																			SRN:[][][][][][][][][][][][]
+
+											PES University					3
+											Dhurwa Ranchi-4
+
+											August:2018Semester IV ESA
+
+				3 English
+				 ____________________________________________________________________________________________________		
+				|Time:dfhrs | Answer: All Question                                                           |Marks:5|		
+				|__________|________________________________________________________________________________|________|		
+
+				 ____________________________________________________________________________________________________		
+				 |1|	Yourgoal is to navigate a robot out of a maze. The robot starts in the center of the maze
+																				[1*3]
+
+				 |2|	Write down a logical sentence such that every world in which it is true contains exactly one o-
+					ject				
+																				[1*3]
+
+				 ____________________________________________________________________________________________________		
+				 |3|	Explain why problem formulation must follow goal formulation. 
+																				[1*3]
+
+				 ____________________________________________________________________________________________________		
+				 |4|	Suppose that the performance measure is concerned with just the first T time steps of
+																				[1*10]
+
+				 ____________________________________________________________________________________________________		
+				 |5|	weight? Are his refutations valid? Can you think of new objections arising from developments
+																				[1*3]
+
+				 ____________________________________________________________________________________________________		
+				 |6|	Consider a state space where the start state is number 1 and each state k has two successors: -
+					umbers 2k and 2k +1 . a. Draw the portion of the state space for states 1 to 15. b. Suppos				
+					 the				
+																				[1*10]
+
+				 ____________________________________________________________________________________________________		

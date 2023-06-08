@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+		 
+       
+	<div style="margin-left: 20%;">
+		<div class="container rr">
+		  <input type="checkbox" id="flip">
+		  <div class="cover">
+			<div class="front">
+		  
+			  <div class="text">
+			
+			   
+			  </div>
+			</div>
+			<div class="back">
+		   
+			
+			</div>
+		  </div>
+		  <div class="forms" >
+			  <div class="form-content">
+				<div class="login-form">
+				  <div class="title">Login</div>
+				<form action="{{url_for('login')}}" method="post">
+				  <div class="input-boxes">
+					<div class="input-box">
+					  <i class="fas fa-envelope"></i>
+					  <input type="text" placeholder="Enter your Username" name="username" value="" required>
+					</div>
+					<div class="input-box">
+					  <i class="fas fa-lock"></i>
+					  <input type="password" placeholder="Enter your password" name="password" value="" required>
+					</div>
+				   <div class="error">{{msg}}</div>
+					<div class="button input-box">
+					  <input type="submit" value="Sumbit">
+					</div>
+					<div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+				  </div>
+			  </form>
+			</div>
+			  <div class="signup-form">
+				<div class="title">Signup</div>
+			  <form action="{{url_for('register')}}" method="post">
+				  <div class="input-boxes">
+					<div class="input-box">
+					  <i class="fas fa-user"></i>
+					  <input type="text" placeholder="Enter your username" name="username" value="" required>
+					</div>
+				
+					<div class="input-box">
+					  <i class="fas fa-envelope"></i>
+					  <input type="text" placeholder="Enter your email" name="email" value="" required>
+					</div>
+				
+					<div class="input-box">
+						<i class="fas fa-lock"></i>
+					  <input type="password" placeholder="Enter your password" name="password" value="" required>
+					</div>
+					<div class="input-box">
+					  <i class="fas fa-lock"></i>
+					<input type="password" placeholder="ReEnter your password" name="re-password" value="" required>
+					<span class="error">{{ms}}</span>
+				  </div>
+				  <div class="input-box">
+					<i class="fas fa-lock"></i>
+				  <input type="text" placeholder="Enter your password" name="course" value="" required>
+				</div>
+					<div class="button input-box">
+					  <input type="submit" value="Sumbit">
+					</div>
+					<div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+				  </div>
+			</form>
+		  </div>
+		  </div>
+		  </div>
+		</div>
+		</div><img src="{{url_for('static', filename='images/footer-bg.png')}}" alt="back" width="100%" height="auto"  style="margin-top: 20px;"/>
+
+		
+</html>
+{% endblock %}

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>{{ title }}</title>
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}"/>
+    <style>
+	
+
+
+
+
+
+	
+    body {
+	background:white;
+}
+.slider-ui {
+	position: relative;
+	width: 500px;
+	height: 40px;
+	margin: 20px 0;
+}
+.slider-ui input {
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	cursor: pointer;
+	opacity: 0;
+}
+.slider-ui .bar {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: #000;
+	border-radius: 50px;
+	box-shadow: 0 5px 0 rgba(0,0,0,.1);
+}
+.slider-ui .min,
+.slider-ui .max {
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 14px;
+	font-weight: 800;
+	color: #fff;
+}
+.slider-ui .min {
+	left: 2%;
+}
+.slider-ui .max {
+	right: 2%;
+}
+.slider-ui .track {
+	position: absolute;
+	z-index: 3;
+	left: 25px;
+	right: 25px;
+	top: 0;
+	bottom: 0;
+}
+.slider-ui .value {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 50px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 800;
+	color:black;
+	background-color: #fff;
+	border: 4px solid #000;
+	border-radius: 100%;
+	box-sizing: border-box;
+	transform: translateX(-50%);
+	transition: top .3s ease-in-out, color .3s ease-in-out;
+}
+.slider-ui .value.up {
+	top: -90%;
+	color: #000;
+}
+.slider-ui.color1 .bar {
+	background-color: #00b894;
+}
+.slider-ui.color1 .value {
+	border-color: #00b894;
+}
+.slider-ui.color2 .bar {
+	background-color: #00cec9;
+}
+.slider-ui.color2 .value {
+	border-color: #00cec9;
+}
+.slider-ui.color3 .bar {
+	background-color: #0984e3;
+}
+.slider-ui.color3 .value {
+	border-color: #0984e3;
+}
+
+.button2 {
+  background-color: rgb(230, 230, 230); 
+  color: #130233; 
+  border-radius: 5px 25px;
+  font-size: 22px;
+  padding:0.4em 1.8em;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  border: 2px solid #130233;
+}
+
+.button2:hover {
+  background-color: #130233;
+  color: white;
+  padding:0.4em 1.8em;
+  cursor: pointer;
+  border-radius: 5px 25px;
+}
+
+
+
+
+
+
+		html {
+			font-size: 1rem;
+		}
+
+		@media (min-width: 576px) {
+			html {
+				font-size: 1.25rem;
+			}
+		}
+
+		@media (min-width: 768px) {
+			html {
+				font-size: 1.5rem;
+			}
+		}
+
+		@media (min-width: 992px) {
+			html {
+				font-size: 1.75rem;
+			}
+		}
+
+		@media (min-width: 1200px) {
+			html {
+				font-size: 2rem;
+			}
+
+			html {
+				font-size: 1rem;
+			}
+
+			h1 {
+				font-size: 1.2rem;
+			}
+
+			h2 {
+				font-size: 1.1rem;
+			}
+
+			@media (min-width: 768px) {
+				html {
+					font-size: 1.1rem;
+				}
+
+				h1 {
+					font-size: 1.3rem;
+				}
+
+				h2 {
+					font-size: 1.2rem;
+				}
+			}
+
+			@media (min-width: 991px) {
+				html {
+					font-size: 1.2rem;
+				}
+
+				h1 {
+					font-size: 1.5rem;
+				}
+
+				h2 {
+					font-size: 1.4rem;
+				}
+			}
+
+			@media (min-width: 1200px) {
+				html {
+					font-size: 1.2rem;
+				}
+
+				h1 {
+					font-size: 1.7rem;
+				}
+
+				h2 {
+					font-size: 1.6rem;
+				}
+			}
+
+		}
+		.huu{
+			display: flex;
+	justify-content: center;
+	align-items: center;
+		}
+	</style>
+    <script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+
+	</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    
+	<style>
+	.navbar-brand{
+  font-weight: 600;
+  padding-left: 25px;
+  font-size: 25px;
+  color:white;
+  text-decoration: none;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.nav-link{
+color:white;
+margin:0px 20px 0px  ;
+text-decoration: none;
+border-radius: 5px;
+font-weight: bold;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.nav-link:hover{
+  background-color: gold;
+ font-family:'Times New Roman', Times, serif;
+ font-weight: 500;
+ color:white;
+}
+.navbar-brand:hover{
+    color: whitesmoke;
+
+
+}
+.error{
+		color: red;
+		font-size: 16px;
+	
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+	.success{
+		color: rgb(42, 159, 236);
+		font-size: 16px;
+	
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+	
+	.title:before{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 5px;
+      width: 175px;
+      background: #130233
+    }
+		
+	.title{
+      position: relative;
+	}
+	.dropdown-item:hover{
+		color:gold;
+
+	}
+	.q{
+		margin-left: 8%;
+            width: 40%;
+            outline: none;
+            border: none;
+            padding: 0 30px;
+            font-size: 19px;
+            font-weight: 500;
+            border-bottom: 2px solid rgba(183, 8, 8, 0.2)
+           ;
+    }
+ 
+  
+	</style>
+    </head>
+
+    <body>
+		<nav class="navbar navbar-expand-lg navbar static-top "style="background-color: #130233">
+			<a class="navbar-brand" href="{{ url_for('index') }}">
+				<span class="brand">Exam Authoring Tool</span>
+			   </a>
+			<button style="color: #fff;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarNavDropdown">
+			  <ul class="navbar-nav">
+				
+				
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('quest') }}">AboutUs
+                                   
+					</a>
+				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link" href="">Course:{{course}}
+                                   
+					</a>
+				</li>
+				<li class="nav-item dropdown ">
+				  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+					<i class="fa fa-user" style="color:white;font-size: 30px;padding-left: 5px;" ></i>
+					{{username}}
+				  </a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: #130233">
+					
+					<a class="dropdown-item"  href="{{ url_for('logout') }}"><i class="fa fa-sign-out" style="font-size: 20px;color: white;" style="text-decoration: none;" >Logout</i></a>
+					
+				  </div>
+				</li>
+			  </ul>
+			</div>
+		  </nav>
+
+            <!-- Navigation -->
+            
+        
+            {% block body %} {% endblock %}
+            
+				<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+				<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+				<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+					  </body>
+    </html>

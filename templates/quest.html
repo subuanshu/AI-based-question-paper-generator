@@ -1,0 +1,35 @@
+{% extends 'layout1.html' %}
+
+{% block body %}
+<section style="background-color: rgb(243, 242, 242);height: 1000px;" >
+<h2 style="color:rgb(141, 141, 141);font-family: 'Times New Roman', Times, serif;text-align: center;" class="mt-2">Generate Question Paper</h2>
+<div class="row">
+    <div class="col-10"><h3 class="container" style="font-family: 'Times New Roman', Times, serif;"></h3>
+        </div>
+
+        <div class="col-2 mt-2 " ><h4 class="container" style="font-family: 'Times New Roman', Times, serif;font-family: 20px;"><span style="font-size: 25px;font-family: 'Times New Roman', Times, serif;">Subject</span>:{{subject}}</h4>
+
+        </div>
+     
+        </div>
+ 
+    <h2 style="text-align: center;color: gold;">Choose the Mode</h2>
+    <form action="{{url_for('quest2')}}" method="POST" style="margin-left: 38%;">
+     
+        <input type="radio" id="auto" name="auto"value="1" style="margin-left: 50px;" >
+        <label for="child" style="font-size: 26px;font-family: 'Times New Roman', Times, serif;color:  #130233;">Automatic Mode</label>
+        <br />
+
+        <input type="radio" id="auto" name="auto"value="1" style="margin-left: 50px;" >
+        <label for="child" style="font-size: 26px;font-family: 'Times New Roman', Times, serif;color:  #130233;">Hybrid Mode mode</label>
+        <br />
+        
+        <input type="radio" id="auto" name="auto"value="2" style="margin-left: 50px;" >
+        <label for="child" style="font-size: 26px;font-family: 'Times New Roman', Times, serif;color:  #130233;">Manual Mode</label>
+        <br />
+
+
+    <button class="btn btn-warning mt-4 mb-3  ml-5 py-4 px-4 " type="submit" style="margin-left:20% ; font-weight:bold;font-family: 'Times New Roman', Times, serif;">Go&nbsp;</button>
+    </form>
+</section>
+{% endblock %}

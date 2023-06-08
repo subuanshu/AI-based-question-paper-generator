@@ -1,0 +1,107 @@
+{% extends 'layout1.html' %}
+{% block body %}
+<section style="background-color: rgb(243, 242, 242);height: 1000px;" >
+  <h2 style="color:rgb(141, 141, 141);font-family: 'Times New Roman', Times, serif;text-align: center;" class="mt-2">Generate Question Paper</h2>
+  <div class="row">
+      <div class="col-10"><h3 class="container" style="font-family: 'Times New Roman', Times, serif;" id="total">Percentage:</h3>
+          </div>
+  
+          <div class="col-2 mt-2 " ><h4 class="container" style="font-family: 'Times New Roman', Times, serif;font-family: 20px;"><span style="font-size: 25px;font-family: 'Times New Roman', Times, serif;">Subject</span>:{{subject}}</h4>
+  
+          </div>
+       
+          </div>
+          <pre>{{msg}}</pre>
+       <pre>{{to}}</pre>
+       <pre>{{pl}}</pre>
+        
+          <div class="">
+            <form  action="{{ url_for('auto') }}" method="POST" id="sign">
+              <label for="1" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 300px;color: rgb(71, 71, 71);">
+                Enter the Total Number of Question 
+            </label>
+            <br>
+
+          <input type="text" value="" name="ttl" required  style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 300px;color: rgb(19, 19, 19);">
+          <br>
+          <h2 style="color:rgb(141, 141, 141);font-family: 'Times New Roman', Times, serif;text-align: center;" class="mt-2">Enter the Percentage of each level of Bloom's Taxonomy</h2>
+              <br>
+            <label for="1" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 300px;color: rgb(15, 15, 15);">
+                    Remembering: Level 1
+                </label>
+                <br>
+              <input type="text" value=" "  id="a6" onchange="call5()" name="1"  required  style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 300px;color: rgb(71, 71, 71);">
+              <br>
+          
+            <label for="2" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 300px;color: rgb(71, 71, 71);">
+                Understanding: Level 2
+            </label>
+          
+            <br>
+             
+              <input type="text" value="" name="2"  id="a7" onchange="call5()" required  style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 300px;color: rgb(71, 71, 71);">
+              <br>
+            <label for="2" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 300px;color: rgb(71, 71, 71);">
+                Applying: Level 3
+            </label>
+            <br>
+          
+            
+              <input type="text" value="" name="3"  id="a8" onchange="call5()" required  style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 300px;color: rgb(71, 71, 71);">
+              <br>
+
+            <label for="2" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 300px;color: rgb(71, 71, 71);">
+                Analyzing: Level 4
+            </label>
+            <br>
+              
+                <input type="text" value="" name="4" required  id="a9" onchange="call5()" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 300px;color: rgb(71, 71, 71);">
+                
+                <br>
+              <label for="2" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 300px;color: rgb(71, 71, 71);">
+                Evaluating: Level 5
+            </label>
+             
+            <br>
+                <input type="text" value="" name="5" required id="a10" onchange="call5()"  style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 300px;color: rgb(71, 71, 71);">
+                
+                <br>
+              <label for="2" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 300px;color: rgb(71, 71, 71);">
+                Creating: Level 6:
+            </label>
+            <br>
+                <input type="text" value="" name="6" required id="a11" onchange="call5()"  style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 300px;color: rgb(71, 71, 71);">
+          
+                <br>
+                <button class="btn ml-5 py-3 px-5" type="submit"  style="margin-left:70% ;background: #130230;color: white; font-weight:bold;font-family: 'Times New Roman', Times, serif;font-size: 20px;">Go</button>
+          
+        
+          </form>
+          </div>
+          <script>
+            function call5(){
+              
+              let a=document.getElementById('a6').value;
+              if (isNaN(a)===false)
+              {
+                document.getElementById("demo").innerHTML = a;
+                console.log(a)
+              
+              }
+              
+              
+              let b=document.getElementById('a7').value;
+              if (isNaN(b)===false)
+              {
+                  a=parseInt(a)+parseInt(b)
+                  document.getElementById("demo").innerHTML = a;
+                  console.log(a)
+
+              }
+
+            }
+  
+
+          </script>
+      {% endblock %}    
+   

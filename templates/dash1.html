@@ -1,0 +1,157 @@
+{% extends 'layout1.html' %}
+
+{% block body %}
+<section >
+<h2 style="color:rgb(141, 141, 141);font-family: 'Times New Roman', Times, serif;text-align: center;" class="mt-2">Bloom's Taxonomy</h2>
+<br>
+<div class="row">
+<div class="col-10"> </div>
+<div class="col-2">
+    <button class="button button2" id="myBtn" type="submit" onclick="call()" >Start &raquo</button>
+    <br>
+    <p class="error" id="demo"></p>
+   
+      </div>
+</div>    
+</div>
+<div class="row">
+    <div class="col-6 mt-2 " ></div>
+ 
+    <div class="col-6 mt-2 title" ><h4 class="container" style="font-family: 'Times New Roman', Times, serif;font-family: 20px;"><span style="font-size: 25px;font-family: 'Times New Roman', Times, serif;">Subject</span>:{{subject}}</h4>
+      
+    </div>
+ 
+    </div>
+
+
+
+<div class="row">
+    <div class="col-5">
+        <p style="text-align: center;color: grey;font-family: 'Times New Roman', Times, serif;font-size:18px">Question is mapped According to Bloom Taxonomy Levels</p>
+        <form action="{{url_for('dash2')}}" method="POST">
+         
+        <label for="subject" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 80px;color: rgb(71, 71, 71);">
+            Enter the  Question
+        </label>
+       
+        <input type="text" name="question" value="" id="subject" required style="margin-left: 60px;border: 2px solid grey;width:60%" required>
+
+        <label for="marks" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 80px;color: rgb(71, 71, 71);">
+            Enter the  Marks 
+        </label>
+        <input type="text" name="marks" value="" id="marks" required style="margin-left: 60px;border: 2px solid grey;width:60%" required>
+        <label for="marks" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 80px;color: rgb(71, 71, 71);">
+            Enter the  Unit of the Question  
+        </label>
+        <input type="text" name="unit" value="" id="unit" required style="margin-left: 60px;border: 2px solid grey;width:60%" required>
+        <span class="error">{{fail}}</span>
+        <br>
+        <button class="btn btn-warning mt-2 mb-3"type="submit" style="margin-left:30% ; font-weight:bold;font-family: 'Times New Roman', Times, serif;">Add</button>
+    </div>
+    <div class="col-7 container">
+    <p class="error" style="text-align: center;">{{msg}}</p>
+    <table id="myTable" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Taxonomy Level</th>
+            <th>Marks</th>
+            <th>Unit</th>
+    
+          </tr>
+        </thead>
+        <tbody>
+          {% for question in account %}
+          <tr>
+            <td>{{ question[1] }}</td>
+       
+           
+        
+        <td>{{ question[0]}}</td>
+       
+       
+     <td>{{question[2]}}</td>
+          
+         
+            
+        <td>{{ question[3] }}</td></tr>
+     
+             
+    
+       
+          {% endfor %}
+       
+        </tbody>
+      </table>        
+    
+            
+    </div>
+    </div>
+    
+</section>
+
+<script>
+var a='{{sub}}';
+console.log("hello"+a);
+
+
+if (parseInt('{{q}}')===1)
+{   
+    if(parseInt('{{b}}')===1)
+        alert("Bloom's Taxonomy \n Remembering: Level 1" )
+    if(parseInt('{{b}}')===2)
+        alert("Bloom's Taxonomy \n Understanding: Level 2" )
+    if(parseInt('{{b}}')===3)
+        alert("Bloom's Taxonomy \n Applying: Level 3" )
+    if(parseInt('{{b}}')===4)
+        alert("Bloom's Taxonomy \n AnalyzinG: Level 4" )
+    if(parseInt('{{b}}')===5)
+        alert("Bloom's Taxonomy \n Evaluating: Level 5" )
+    if(parseInt('{{b}}')===6)
+        alert("Bloom's Taxonomy \n Creating: Level 6" )
+
+
+    
+}
+function call()
+    {
+        window.location.href="{{url_for('quest1')}}";
+    }
+
+if(parseInt('{{fail}}')===1)
+{
+    alert("Question is dublicate")
+}
+
+var a='{{u}}'
+          console.log(a);
+          if (parseInt(a)===1)
+          {
+            toggleTable();
+            nextt();
+          }
+          function toggleTable() {
+          const x = document.getElementById("myTable");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else { 
+            x.style.display = "none";
+          }
+        }
+
+        function nextt() {
+            const x = document.getElementById("myBtn");
+          var  xx="*please Add the Question for proceed"
+         
+            document.getElementById("demo").innerHTML = xx;
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else { 
+            x.style.display = "none";
+          }
+            
+        }
+</script>
+
+
+{% endblock %}

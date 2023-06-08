@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+<style>
+    
+
+    </style>
+{% block body %}
+<section>
+   
+
+    <img src="{{url_for('static', filename='images/home-banner-bg.png')}}" alt="back" width="100%" height="auto" class="banner"/>
+
+    <h1 style="text-align:center; color:white ;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;position: absolute; top:  200px;left: 26px;z-index: 1;">Welcome To Exam Authoring Tool</h1>
+    
+    <img class="img"  src="{{url_for('static', filename='images/header-img.png')}} "/>
+
+   
+ 
+ 
+    </section>
+<section class="container" id="dashboard" style="height: 500px;">
+
+    <div class="row mt-5">
+        <div class="col-6 mt-3">
+            <h2 class="title" style="font-family: 'Times New Roman', Times, serif;color: rgb(91, 90, 90);" >Exam Authoring Tool</h2>
+        
+            <div style="  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 18px;">You can construct question papers using the question paper generator provided by our
+                Exam Authoring Tool, which is a streamlined and user-friendly method. The entire onerous
+                 process of manually creating test questions and test papers is quickly and effectively 
+                 eliminated by our Exam Authoring Tool. The ConductExam question paper generator is a great 
+                 tool for educational institutions like schools and universities.</div>
+        </div>
+        <div class="col-6 mt-3">
+            <img src="{{url_for('static', filename='images/w.jpg')}}" alt="back" width="700px" height="300px" class="img_zoom" />
+        </div>
+    </div>
+    <br />
+    <br />
+    <button class="btn ml-5 py-3 px-5" type="submit" onclick="call()" style="margin-left:40% ;background: #ab36e7;color: white; font-weight:bold;font-family: 'Times New Roman', Times, serif;font-size: 20px;">Get Started</button>
+    <!-- <h3>Enter the subject Name for create a Question Paper</h3>
+<img src="{{url_for('static', filename='images/home-banner-bg.png')}}" alt="back" width="100%" height="auto" class="banner"/>
+	<form action="{{url_for('dashboard')}}" method="POST">
+    <input type="text" name="subject" value="" id="subject" required>
+    <input type="submit" value="VALUE2" name="action2" />
+    </button>
+    </form>
+    <p id="alrt" style="color:white">{{subject}}</p>
+    <script>
+        var p = document.getElementById('alrt')
+        if (p=='True'){
+            alert("FIle is created chocie different name")
+        }
+        else{
+            alert("FIle is created")
+        }
+    </script>
+<p>This is a Flask application.{{subject}}</p> -->
+
+</section>
+<img src="{{url_for('static', filename='images/footer-bg.png')}}" alt="back" width="100%" height="auto" />
+<script>
+    function call()
+    {
+        window.location.href="{{url_for('login')}}";
+    }
+    </script>
+
+</html>
+{% endblock %}

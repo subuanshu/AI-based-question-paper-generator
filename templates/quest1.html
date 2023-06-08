@@ -1,0 +1,75 @@
+{% extends 'layout1.html' %}
+
+{% block body %}
+
+<h2 style="color:rgb(141, 141, 141);font-family: 'Times New Roman', Times, serif;text-align: center;" class="mt-2">Generate Question Paper</h2>
+<div class="row">
+    <div class="col-10"><h3 class="container" style="font-family: 'Times New Roman', Times, serif;">Enter the details</h3>
+        </div>
+
+        
+            <div class="col-2 mt-2 " ><h4 class="container" style="font-family: 'Times New Roman', Times, serif;font-family: 20px;"><span style="font-size: 25px;font-family: 'Times New Roman', Times, serif;">Subject</span>:{{subject}}</h4>
+            </div>
+            </div>
+          
+        <form action="{{url_for('quest')}}" method="POST" style="margin-left:25%">
+           
+            
+            <label for="school" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 80px;color: rgb(71, 71, 71);">
+                Enter the  University or School Name:
+            </label>
+            <br />
+            <input type="text" name="school" value="" id="school"  style="margin-left: 60px; outline: none;border: none;width:60% ; font-weight: 500;border-bottom: 2px solid  #130233" required>
+    
+            <br />
+            <label for="year" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 80px;color: rgb(71, 71, 71);">
+                Enter the Year
+            </label>
+            <br />
+            <input type="text" name="year" value="" id="year"  style="margin-left: 60px; outline: none;border: none;width:60% ; font-weight: 500;border-bottom: 2px solid  #130233" required>
+    
+            <br />
+            <label for="marks" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 80px;color: rgb(71, 71, 71);">
+                Enter the Total Marks 
+            </label>
+            <br />
+            <input type="text" name="marks" value="" id="marks"  style="margin-left: 60px; outline: none;border: none;width:60% ; font-weight: 500;border-bottom: 2px solid  #130233" required>
+    
+           <br>
+            <label for="code" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 80px;color: rgb(71, 71, 71);">
+                Enter the Subject Code
+            </label>
+            <br />
+            <input class="q" type="text" name="code" value="" id="code"  style="margin-left: 60px; outline: none;border: none;width:60% ; font-weight: 500;border-bottom: 2px solid  #130233" required>
+            
+            <br />
+            <label for="general" style="font-size:22px;font-family: 'Times New Roman', Times, serif;font-weight: bold;margin-left: 80px;color: rgb(81, 80, 80);">
+            Enter  Max Time
+        </label>
+        <br />
+        <input type="text" name="time" value="" id="general"  style="margin-left: 60px; outline: none;border: none;width:60% ; font-weight: 500;border-bottom: 2px solid  #130233" required>
+        <br />
+        <button class="btn btn-warning mt-2 mb-3"type="submit" style="margin-left:30% ; font-weight:bold;font-family: 'Times New Roman', Times, serif;">Start</button>
+   </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
